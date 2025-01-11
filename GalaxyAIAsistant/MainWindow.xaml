@@ -36,18 +36,18 @@
         </Storyboard>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="Transparent">
         <!-- Main Circle Button -->
         <Ellipse Width="80" Height="80" Fill="DodgerBlue" Stroke="Black" StrokeThickness="2">
             <Ellipse.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" Color="Black" />
             </Ellipse.Effect>
         </Ellipse>
-        
+
         <TextBlock Text="😊" FontSize="30" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
-        <!-- Submenu Buttons (Now Circular) -->
-        <Button x:Name="SubButton1" Width="60" Height="60" Content="1" Background="DodgerBlue" Foreground="Black"
+        <!-- Submenu Buttons with Favicon Images -->
+        <Button x:Name="SubButton1" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
                 VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
@@ -55,6 +55,9 @@
             <Button.Clip>
                 <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
             </Button.Clip>
+            <Button.Content>
+                <Image Source="favicon1.ico" Width="30" Height="30" />
+            </Button.Content>
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Effect">
@@ -74,7 +77,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="SubButton2" Width="60" Height="60" Content="2" Background="DodgerBlue" Foreground="Black"
+        <Button x:Name="SubButton2" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
                 VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
@@ -82,6 +85,9 @@
             <Button.Clip>
                 <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
             </Button.Clip>
+            <Button.Content>
+                <Image Source="favicon2.ico" Width="30" Height="30" />
+            </Button.Content>
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Effect">
@@ -101,7 +107,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="SubButton3" Width="60" Height="60" Content="3" Background="DodgerBlue" Foreground="Black"
+        <Button x:Name="SubButton3" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
                 VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
@@ -109,6 +115,9 @@
             <Button.Clip>
                 <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
             </Button.Clip>
+            <Button.Content>
+                <Image Source="favicon3.ico" Width="30" Height="30" />
+            </Button.Content>
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Effect">
