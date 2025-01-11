@@ -17,6 +17,7 @@ namespace WindowsApp
 
             // Register services
             services.AddScoped<ITeamsCommunicator, TeamsCommunicator>();
+            services.AddScoped<IVoiceService, VoiceService>();
 
 
 

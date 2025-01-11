@@ -7,9 +7,9 @@
     <Window.Resources>
         <!-- Storyboard for expanding submenu -->
         <Storyboard x:Key="ExpandMenu">
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1" />
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="-80" Duration="0:0:0.1" />
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-50" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="-80" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-50" Duration="0:0:0.1" />
 
             <DoubleAnimation Storyboard.TargetName="SubButton2" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1" />
             <DoubleAnimation Storyboard.TargetName="SubButton2" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="0" Duration="0:0:0.1" />
@@ -22,9 +22,9 @@
 
         <!-- Storyboard for collapsing submenu -->
         <Storyboard x:Key="CollapseMenu">
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1" />
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="0" Duration="0:0:0.1" />
-            <DoubleAnimation Storyboard.TargetName="SubButton1" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="0" Duration="0:0:0.1" />
+            <DoubleAnimation Storyboard.TargetName="VoiceAssistBtn" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.1" />
 
             <DoubleAnimation Storyboard.TargetName="SubButton2" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1" />
             <DoubleAnimation Storyboard.TargetName="SubButton2" Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" To="0" Duration="0:0:0.1" />
@@ -36,19 +36,26 @@
         </Storyboard>
     </Window.Resources>
 
-    <Grid Background="Transparent">
+    <Grid Background="Transparent" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <!-- Main Circle Button -->
-        <Ellipse Width="80" Height="80" Fill="DodgerBlue" Stroke="Black" StrokeThickness="2">
+        <Ellipse Width="80" Height="80" Fill="DodgerBlue" Stroke="Black" StrokeThickness="2" Margin="110,110,110,110" Grid.ColumnSpan="2">
             <Ellipse.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="3" Color="Black" />
             </Ellipse.Effect>
         </Ellipse>
 
-        <TextBlock Text="😊" FontSize="30" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="GALA" FontSize="30" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" />
 
         <!-- Submenu Buttons with Favicon Images -->
-        <Button x:Name="SubButton1" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
-                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="VoiceAssistBtn" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
+                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5"
+                Click="VoiceRecog" Grid.Column="1"
+                >
+
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
             </Button.RenderTransform>
@@ -56,7 +63,9 @@
                 <EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
             </Button.Clip>
             <Button.Content>
-                <Image Source="favicon1.ico" Width="30" Height="30" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">
+        🎤
+                </TextBlock>
             </Button.Content>
             <Button.Style>
                 <Style TargetType="Button">
@@ -78,7 +87,7 @@
             </Button.Style>
         </Button>
         <Button x:Name="SubButton2" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
-                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
             </Button.RenderTransform>
@@ -108,7 +117,7 @@
             </Button.Style>
         </Button>
         <Button x:Name="SubButton3" Width="60" Height="60" Background="DodgerBlue" Foreground="Black"
-                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
             <Button.RenderTransform>
                 <TranslateTransform X="0" Y="0" />
             </Button.RenderTransform>
@@ -141,6 +150,9 @@
         <!-- Main Button Event Trigger -->
         <Button Width="80" Height="80" Background="Transparent" BorderBrush="Transparent"
                 VerticalAlignment="Center" HorizontalAlignment="Center"
-                Click="MainButton_Click" />
+                Click="MainButton_Click" Grid.Column="1" />
+
     </Grid>
 </Window>
+
+    
