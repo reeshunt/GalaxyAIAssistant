@@ -17,15 +17,15 @@ namespace Infrastructure.Services
 
         public TeamsCommunicator()
         {
-            string clientId= "", 
-            tenantId= "", 
-            clientSecret = "";
+            //string clientId= "", 
+            //tenantId= "", 
+            //clientSecret = "";
 
             // Create a credential using Azure.Identity
-            var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
+            //var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
 
-            // Initialize the GraphServiceClient
-            _graphClient = new GraphServiceClient(credential);
+            //// Initialize the GraphServiceClient
+            //_graphClient = new GraphServiceClient(credential);
         }
 
         // Get messages from a specific channel

@@ -32,10 +32,6 @@ namespace WindowsApp
         // Method to toggle the menu expansion and collapse
         private async void MainButton_Click(object sender, RoutedEventArgs e)
         {
-            await _teamsService.GetAllMessagesAsync(
-                "19%3A8bac10eaf382472483700247341adfaa%40thread.skype"
-                , "19%3Aa0f7b452794e4ed099dd23e9efa6fdba%40thread.skype"
-                );
             await ToggleMenuState();
         }
 
